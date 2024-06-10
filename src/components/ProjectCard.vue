@@ -20,13 +20,13 @@ export default {
         <div class="card my-3">
             <div class="card-body">
                 <h5 class="card-title">{{ projectInfo.name }}</h5>
-                <div v-if="projectInfo.type">
+                <div v-if="projectInfo.type_id">
                     <strong>Tipo di progetto</strong>: {{ projectInfo.type.name }}
                 </div>
-
+<!-- 
                 <div v-if="projectInfo.technologies.length>0">
                     <strong>Tecnologie impiegate</strong>: <span v-for="technology in projectInfo.technologies">{{ technology.name }} &nbsp;</span>
-                </div>
+                </div> -->
                 <!-- <p v-if="projectInfo.summary" class="card-text">{{ truncateText(projectInfo.summary) }}</p> -->
             </div>
         </div>
