@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <header>
+    <header class="shadow mb-4">
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
