@@ -1,5 +1,5 @@
 <script>
-import ProjectList from './components/ProjectList.vue';
+import ProjectList from './pages/ProjectList.vue';
 import AppHeader from './components/AppHeader.vue';
 
 export default {
@@ -12,9 +12,8 @@ export default {
 
 <template>
   <AppHeader></AppHeader>
-  <main>
-    <ProjectList></ProjectList>
-  </main>
+  <router-view></router-view>
+
 </template>
 
 <style lang="scss">
