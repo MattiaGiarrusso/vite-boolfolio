@@ -1,15 +1,20 @@
 <script>
 import ProjectList from './components/ProjectList.vue';
+import AppHeader from './components/AppHeader.vue';
 
 export default {
   components: {
-    ProjectList
+    ProjectList,
+    AppHeader
   }
 }
 </script>
 
 <template>
-  <ProjectList></ProjectList>
+  <AppHeader></AppHeader>
+  <main>
+    <ProjectList></ProjectList>
+  </main>
 </template>
 
 <style lang="scss">

@@ -23,11 +23,11 @@ export default {
                 <div v-if="projectInfo.type_id">
                     <strong>Tipo di progetto</strong>: {{ projectInfo.type.name }}
                 </div>
-<!-- 
+
                 <div v-if="projectInfo.technologies.length>0">
                     <strong>Tecnologie impiegate</strong>: <span v-for="technology in projectInfo.technologies">{{ technology.name }} &nbsp;</span>
-                </div> -->
-                <!-- <p v-if="projectInfo.summary" class="card-text">{{ truncateText(projectInfo.summary) }}</p> -->
+                </div> 
+                <p v-if="projectInfo.summary" class="card-text">{{ truncateText(projectInfo.summary) }}</p>
             </div>
         </div>
     </div>
