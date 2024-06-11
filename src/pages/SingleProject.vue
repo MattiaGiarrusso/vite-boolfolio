@@ -27,9 +27,9 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+<div class="container">
     
-        <div v-if="loading">
+    <div v-if="loading">
 
         <h1>{{ project.name }}</h1>
 
@@ -45,5 +45,5 @@ export default {
         </div>
     </div>
 
-    </div>
+</div>
 </template>
