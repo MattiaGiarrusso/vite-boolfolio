@@ -1,12 +1,14 @@
 <script>
 import axios from 'axios';
+import { store } from '../store.js';
 
 export default {
     name: 'SingleProject',
     data() {
         return {
+            store,
             project: null,
-            loading: false,
+            // loading: false,
         };
     },
     methods: {
@@ -15,7 +17,7 @@ export default {
             .then((response) => {
                 if(response.data.success){
                     this.project = response.data.project;
-                    this.loading = true;
+                    // this.loading = true;
                 } else {
                     this.$router.push({name:'not-found'});
                 }
@@ -30,9 +32,9 @@ export default {
 </script>
 
 <template>
-<div class="container">    
-    <div v-if="loading">
 
+<div class="container">    
+    <div v-if="project">
         <h2>{{ project.name }}</h2>
 
         <div class="mt-4 d-flex justify-content-between">
@@ -56,13 +58,12 @@ export default {
             </div>         
             
             <div v-if="project.cover_image">
-                <img :src="`http://127.0.0.1:8000/storage/${project.cover_image}`" :alt="project.name">
-            </div>
-            
-        </div>
-        
+                <img :src="`${this.store.apiBaseUrl}/storage/${project.cover_image}`" :alt="project.name">
+            </div>            
+        </div>        
     </div>
 </div>
+
 </template>
 
 

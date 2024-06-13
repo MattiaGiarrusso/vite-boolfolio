@@ -6,7 +6,7 @@ import { store } from '../store.js';
 export default {
     name: 'ProjectList',
     components: {
-        ProjectCard
+        ProjectCard,
     },
     data() {
         return {
