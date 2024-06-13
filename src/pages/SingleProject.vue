@@ -40,7 +40,7 @@ export default {
         <div class="mt-4 d-flex justify-content-between">
             <div>
                 <div v-if="project.client_name">
-                    <strong>Cliente del progetto:</strong>{{ project.client_name }}
+                    <strong>Cliente del progetto:</strong> {{ project.client_name }}
                 </div>
     
                 <div v-if="project.type">
@@ -48,11 +48,11 @@ export default {
                 </div>
     
                 <div v-if="project.technologies.lenght > 0">
-                    <strong>Tipo di progetto:</strong><span class="badge text-bg-info mx-1">{{ project.type.name }}</span>
+                    <strong>Tipo di progetto:</strong><span class="badge text-bg-info mx-1"> {{ project.type.name }}</span>
                 </div>
                 
-                <div v-if="project.summary" class="row">                
-                    <h6>Descrizione del progetto</h6>
+                <div v-if="project.summary" class="row mt-4">                
+                    <strong>Descrizione del progetto</strong>
                     <p class="card-text">{{ project.summary }}</p>
                 </div>
             </div>         
