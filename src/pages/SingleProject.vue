@@ -11,7 +11,7 @@ export default {
     },
     methods: {
         getProjectDetails() {
-            axios.get(`http://127.0.0.1:8000/api/projects/${this.$route.params.slug}`)
+            axios.get(`${this.store.apiBaseUrl}/api/projects/${this.$route.params.slug}`)
             .then((response) => {
                 if(response.data.success){
                     this.project = response.data.project;

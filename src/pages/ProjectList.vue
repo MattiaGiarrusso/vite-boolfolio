@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import ProjectCard from '../components/ProjectCard.vue';
+import { store } from '../store.js';
 
 export default {
     name: 'ProjectList',
@@ -9,6 +10,7 @@ export default {
     },
     data() {
         return {
+            store,
             projects: [],
             currentPage: 1,
             nextPageUrl: null,
@@ -17,7 +19,7 @@ export default {
     },
     methods: {
         getProjects(pageNumb) {
-            axios.get('http://127.0.0.1:8000/api/projects', {
+            axios.get(`${this.store.apiBaseUrl}/api/projects`, {
                 params:{
                     page: pageNumb
                 }
