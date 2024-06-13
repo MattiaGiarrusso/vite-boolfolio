@@ -19,6 +19,9 @@ export default {
 
     <div class="col">
         <div class="card my-3 ms-card">
+            <div class="card-header">
+                <h6>Progetto</h6> 
+            </div>
             <div class="card-body d-flex flex-column justify-content-between">
                 <div>
                     <div v-if="projectInfo.name" class="my-1">

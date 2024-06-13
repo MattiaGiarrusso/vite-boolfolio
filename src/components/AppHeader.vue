@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <header class="shadow mb-4">
+    <header class="shadow mb-4 sticky-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
             <div class="container-fluid">
                 <router-link class="navbar-brand" :to="{ name: 'home' }">
