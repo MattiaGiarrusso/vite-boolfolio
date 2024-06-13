@@ -27,7 +27,7 @@ export default {
                 <div v-if="projectInfo.technologies.length>0">
                     <strong>Tecnologie impiegate</strong>: <span v-for="technology in projectInfo.technologies">{{ technology.name }} &nbsp;</span>
                 </div> 
-                <p v-if="projectInfo.summary" class="card-text">{{ truncateText(projectInfo.summary) }}</p>
+                <p v-if="projectInfo.summary" class="card-text"><strong>Descrizione: </strong>{{ truncateText(projectInfo.summary) }}</p>
                 <router-link :to="{ name: 'single-project', params: {slug: projectInfo.slug } }" class="btn btn-primary">Visualizza</router-link>
             </div>
         </div>

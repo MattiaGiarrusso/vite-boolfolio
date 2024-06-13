@@ -1,25 +1,32 @@
 <script>
 import axios from 'axios';
 import { store } from '../store.js';
+import Loader from '../components/Loader.vue';
 
 export default {
     name: 'SingleProject',
+    components: {
+        Loader,
+    },
     data() {
         return {
             store,
             project: null,
-            // loading: false,
+            isLoading: false
         };
     },
     methods: {
         getProjectDetails() {
+            this.isLoading = true;
+
             axios.get(`${this.store.apiBaseUrl}/api/projects/${this.$route.params.slug}`)
             .then((response) => {
                 if(response.data.success){
                     this.project = response.data.project;
-                    // this.loading = true;
+                    this.isLoading = false; 
                 } else {
                     this.$router.push({name:'not-found'});
+                    this.isLoading = false; 
                 }
             });
         }
@@ -61,6 +68,10 @@ export default {
                 <img :src="`${this.store.apiBaseUrl}/storage/${project.cover_image}`" :alt="project.name">
             </div>            
         </div>        
+    </div>
+
+    <div v-else class="container text-center">
+        <Loader></Loader>
     </div>
 </div>
 
