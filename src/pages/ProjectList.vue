@@ -23,10 +23,14 @@ export default {
                 }
             })
             .then((response) => {
-                this.projects = response.data.results.data;
-                this.currentPage = response.data.results.current_page;
-                this.previousPageUrl = response.data.results.prev_page_url;
-                this.nextPageUrl = response.data.results.next_page_url;
+                if(response.data.success){
+                    this.projects = response.data.results.data;
+                    this.currentPage = response.data.results.current_page;
+                    this.previousPageUrl = response.data.results.prev_page_url;
+                    this.nextPageUrl = response.data.results.next_page_url;
+                } else {
+                    this.$router.push({name:'not-found'});
+                }
             });
         }
     },

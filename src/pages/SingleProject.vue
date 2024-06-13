@@ -13,9 +13,12 @@ export default {
         getProjectDetails() {
             axios.get(`http://127.0.0.1:8000/api/projects/${this.$route.params.slug}`)
             .then((response) => {
-                this.project = response.data.project;
-                console.log(response.data);
-                this.loading = true;
+                if(response.data.success){
+                    this.project = response.data.project;
+                    this.loading = true;
+                } else {
+                    this.$router.push({name:'not-found'});
+                }
             });
         }
     },
